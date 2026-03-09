@@ -1,0 +1,271 @@
+x <- read.table(file.choose(), header = TRUE, sep = ",")
+> 
+> x
+        Name Age    Sex Grade
+1       Raul  25   Male    80
+2     Booker  18   Male    83
+3      Lauri  21 Female    90
+4     Leonie  21 Female    91
+5    Sherlyn  22 Female    85
+6    Mikaela  20 Female    69
+7    Raphael  23   Male    91
+8       Aiko  24 Female    97
+9   Tiffaney  21 Female    78
+10    Corina  23 Female    81
+11 Petronila  23 Female    98
+12    Alecia  20 Female    87
+13   Shemika  23 Female    97
+14    Fallon  22 Female    90
+15   Deloris  21 Female    67
+16    Randee  23 Female    91
+17     Eboni  20 Female    84
+18   Delfina  19 Female    93
+19 Ernestina  19 Female    93
+20      Milo  19   Male    67
+> library(plyr)
+> y = ddply(x,"Sex",transform, Grade.Average=mean(Grade))
+> ddply(x,"Sex",transform, Grade.Average=mean(Grade))
+        Name Age    Sex Grade Grade.Average
+1      Lauri  21 Female    90       86.9375
+2     Leonie  21 Female    91       86.9375
+3    Sherlyn  22 Female    85       86.9375
+4    Mikaela  20 Female    69       86.9375
+5       Aiko  24 Female    97       86.9375
+6   Tiffaney  21 Female    78       86.9375
+7     Corina  23 Female    81       86.9375
+8  Petronila  23 Female    98       86.9375
+9     Alecia  20 Female    87       86.9375
+10   Shemika  23 Female    97       86.9375
+11    Fallon  22 Female    90       86.9375
+12   Deloris  21 Female    67       86.9375
+13    Randee  23 Female    91       86.9375
+14     Eboni  20 Female    84       86.9375
+15   Delfina  19 Female    93       86.9375
+16 Ernestina  19 Female    93       86.9375
+17      Raul  25   Male    80       80.2500
+18    Booker  18   Male    83       80.2500
+19   Raphael  23   Male    91       80.2500
+20      Milo  19   Male    67       80.2500
+> write.table(y,"Sorted_Average")
+> write.table(y,"Sorted_Average",sep=",")
+> write.table(
++     gender_mean,
++     file = "gender_mean.txt",
++     sep  = "\t",
++     row.names = FALSE
++ )
+Error: object 'gender_mean' not found
+
+> write.table(y,"Sorted_Average",sep=",")
+> file.show("Sorted_Average.csv")
+Error: File Sorted_Average.csv does not exist.
+
+> write.table(
++     y,
++     file = "Sorted_Average.csv",
++     sep = ",",
++     row.names = FALSE
++ )
+> 
+> list.files()
+[1] "Assignment 8.Rproj" "Sorted_Average"     "Sorted_Average.csv"
+> 
+> newx = subset(x,grepl("[iI]",x$Name))
+> subset(x,grepl("[iI]",x$Name))
+        Name Age    Sex Grade
+3      Lauri  21 Female    90
+4     Leonie  21 Female    91
+6    Mikaela  20 Female    69
+8       Aiko  24 Female    97
+9   Tiffaney  21 Female    78
+10    Corina  23 Female    81
+11 Petronila  23 Female    98
+12    Alecia  20 Female    87
+13   Shemika  23 Female    97
+15   Deloris  21 Female    67
+17     Eboni  20 Female    84
+18   Delfina  19 Female    93
+19 Ernestina  19 Female    93
+20      Milo  19   Male    67
+> write.table(newx,"DataSubset",sep=",")
+> i_students <- subset(
++     student6,
++     grepl("i", Name, ignore.case = TRUE)
++ )
+Error: object 'student6' not found
+
+> write.table(newx,"DataSubset",sep=",")
+> subset(x,grepl("[iI]",x$Name))
+        Name Age    Sex Grade
+3      Lauri  21 Female    90
+4     Leonie  21 Female    91
+6    Mikaela  20 Female    69
+8       Aiko  24 Female    97
+9   Tiffaney  21 Female    78
+10    Corina  23 Female    81
+11 Petronila  23 Female    98
+12    Alecia  20 Female    87
+13   Shemika  23 Female    97
+15   Deloris  21 Female    67
+17     Eboni  20 Female    84
+18   Delfina  19 Female    93
+19 Ernestina  19 Female    93
+20      Milo  19   Male    67
+> >write.table(newx,"DataSubset",sep=",")
+Error: unexpected '>' in ">"
+
+> write.table(newx,"DataSubset",sep=",")
+> write.csv(
++     i_students$Name,
++     file      = "i_students.csv",
++     row.names = FALSE,
++     quote     = FALSE
++ )
+Error in eval(expr, p) : object 'i_students' not found
+
+> write.csv(
++     i_students$Name,
++     file      = "i_students.csv",
++     row.names = FALSE,
++     quote     = FALSE
++ )
+Error in eval(expr, p) : object 'i_students' not found
+
+> write.table(newx,"DataSubset",sep=",")
+> > write.csv(
+Error: unexpected '>' in ">"
+
+> write.csv(with_i, "Names_with_i.csv", row.names = FALSE)
+Error in eval(expr, p) : object 'with_i' not found
+
+> > write.table(y,"i_students",sep=",")
+Error: unexpected '>' in ">"
+
+> write.table(y,"i_students",sep=",")
+> write.csv(
++     +     i_students$Name,
++     +     file      = "i_students.csv",
+Error: unexpected '=' in:
+"    +     i_students$Name,
+    +     file      ="
+
+> > write.table(
+Error: unexpected '>' in ">"
+
+> write.csv(
++     +     +     i_students$Name,
++     +     +     file      = "i_students.csv",
+Error: unexpected '=' in:
+"    +     +     i_students$Name,
+    +     +     file      ="
+
+> write.csv(
++     i_students$Name,
++     file      = "i_students.csv",
++     row.names = FALSE,
++     quote     = FALSE
++ )
+Error in eval(expr, p) : object 'i_students' not found
+
+>  write.table(y,"i_students",sep=",")
+> file.show("Names_with_i")
+Error in .rs.pager(files, header, title, delete.file) : 
+  File Names_with_i does not exist.
+
+> newx = subset(x,grepl("[iI]",x$Name))
+> subset(x,grepl("[iI]",x$Name))
+        Name Age    Sex Grade
+3      Lauri  21 Female    90
+4     Leonie  21 Female    91
+6    Mikaela  20 Female    69
+8       Aiko  24 Female    97
+9   Tiffaney  21 Female    78
+10    Corina  23 Female    81
+11 Petronila  23 Female    98
+12    Alecia  20 Female    87
+13   Shemika  23 Female    97
+15   Deloris  21 Female    67
+17     Eboni  20 Female    84
+18   Delfina  19 Female    93
+19 Ernestina  19 Female    93
+20      Milo  19   Male    67
+> write.table(newx,"DataSubset",sep=",")
+> i_students <- subset(
++     student6,
++     grepl("i", Name, ignore.case = TRUE)
++ )
+Error: object 'student6' not found
+
+> write.csv(
++     i_students$Name,
++     file      = "i_students.csv",
++     row.names = FALSE,
++     quote     = FALSE
++ )
+Error in eval(expr, p) : object 'i_students' not found
+
+> ls()
+[1] "newx" "x"    "y"   
+> 
+> student6 <- read.table(
++     file.choose(),
++     header = TRUE,
++     sep = ",",
++     stringsAsFactors = FALSE
++ )
+> 
+> ls()
+[1] "newx"     "student6" "x"        "y"       
+> 
+> names(student6)
+[1] "Name"  "Age"   "Sex"   "Grade"
+> 
+> i_students <- subset(student6, grepl("i", student6$Name, ignore.case = TRUE))
+> i_students
+        Name Age    Sex Grade
+3      Lauri  21 Female    90
+4     Leonie  21 Female    91
+6    Mikaela  20 Female    69
+8       Aiko  24 Female    97
+9   Tiffaney  21 Female    78
+10    Corina  23 Female    81
+11 Petronila  23 Female    98
+12    Alecia  20 Female    87
+13   Shemika  23 Female    97
+15   Deloris  21 Female    67
+17     Eboni  20 Female    84
+18   Delfina  19 Female    93
+19 Ernestina  19 Female    93
+20      Milo  19   Male    67
+> write.csv(
++     i_students$Name,
++     file      = "i_students.csv",
++     row.names = FALSE,
++     quote     = FALSE
++ )
+> write.csv(i_students$Name, ...)
+Error: '...' used in an incorrect context
+
+> i_students <- subset(
++     student6,
++     grepl("i", Name, ignore.case = TRUE)
++ )
+> write.csv(
++     i_students$Name,
++     file      = "i_students.csv",
++     row.names = FALSE,
++     quote     = FALSE
++ )
+> list.files()
+[1] "Assignment 8.Rproj" "DataSubset"         "i_students"        
+[4] "i_students.csv"     "Sorted_Average"     "Sorted_Average.csv"
+> 
+> write.csv(
++     i_students,
++     file      = "i_students_full.csv",
++     row.names = FALSE
++ )
+> list.files()
+[1] "Assignment 8.Rproj"  "DataSubset"          "i_students"         
+[4] "i_students.csv"      "i_students_full.csv" "Sorted_Average"     
+[7] "Sorted_Average.csv" 

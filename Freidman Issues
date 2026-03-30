@@ -71,3 +71,19 @@ Selection: 2
 ✔ Adding ".Rproj.user" to .gitignore.
 ✔ Adding "^\\.Rproj\\.user$" to .Rbuildignore.
 ✔ Setting active project to "<no active project>".
+
+Package: Friedman
+Title: Looking at College Majors and Job Placement Rates Data
+Version: 0.0.0.9000
+Authors@R: 
+    person("Angelica", "Wright.", email = "myemailt@school.edu",
+           role = c("aut", "cre"))
+Description:  A simple package with helper functions and example data for 
+    exploring job placement rates associated with majors. Includes basic data cleaning, 
+    summaries, and visualizations for teaching R graphics systems.
+Depends: R (>= 3.1.2)
+Imports: list packages you will use (e.g., ggplot2, dplyr).
+License: choose (e.g., CC0).
+LazyData: set to true if you include data sets.
+URL: https://github.com/awright23/-r-programming-assignments/blob/main/Friedman
+BugReports:https://github.com/awright23/-r-programming-assignments/blob/main/Freidman%20Issues 

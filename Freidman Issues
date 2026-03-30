@@ -1,1 +1,73 @@
+install.packages("devtools")
+Installing package into ‘C:/Users/angew/AppData/Local/R/win-library/4.5’
+(as ‘lib’ is unspecified)
+trying URL 'https://cran.rstudio.com/bin/windows/contrib/4.5/devtools_2.5.0.zip'
+Content type 'application/zip' length 475696 bytes (464 KB)
+downloaded 464 KB
 
+package ‘devtools’ successfully unpacked and MD5 sums checked
+
+The downloaded binary packages are in
+	C:\Users\angew\AppData\Local\Temp\RtmpWQ7z0I\downloaded_packages
+> library(devtools)
+Loading required package: usethis
+Warning messages:
+1: package ‘devtools’ was built under R version 4.5.3 
+2: package ‘usethis’ was built under R version 4.5.3 
+> 
+> create("Friedman")
+! New project ./Friedman would be nested inside an existing project
+  C:/Users/angew/OneDrive/Documents/Friedman/, which is rarely a good idea.
+ℹ If this is unexpected, the here package has a function, `here::dr_here()`
+  that reveals why a particular path is regarded as a project. To learn more,
+  run `here::dr_here()` in a fresh R session that has
+  C:/Users/angew/OneDrive/Documents/Friedman/ as working directory.
+Do you want to create anyway?
+
+1: Absolutely
+2: Nope
+3: Not now
+
+Selection: 
+Enter an item from the menu, or 0 to exit
+Selection: 2
+Error in `challenge_nested_project()`:
+✖ Cancelling project creation.
+Run `rlang::last_trace()` to see where the error occurred.
+Warning message:
+`create()` was deprecated in devtools 2.5.0.
+ℹ Please use `usethis::create_package()` instead.
+This warning is displayed once per session.
+Call lifecycle::last_lifecycle_warnings() to see where this warning was
+generated. 
+
+> setwd("C:/Users/angew/OneDrive/Documents/")
+> 
+> create("Friedman")
+✔ Setting active project to "C:/Users/angew/OneDrive/Documents/Friedman".
+✔ Creating R/.
+✔ Writing DESCRIPTION.
+Package: Friedman
+Title: What the Package Does (One Line, Title Case)
+Version: 0.0.0.9000
+Authors@R (parsed):
+    * First Last <first.last@example.com> [aut, cre]
+Description: What the package does (one paragraph).
+License: `use_mit_license()`, `use_gpl3_license()` or friends to
+    pick a license
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
+✔ Writing NAMESPACE.
+! Overwrite pre-existing file Friedman.Rproj?
+
+1: No way
+2: I agree
+3: Negative
+
+Selection: 2
+✔ Writing Friedman.Rproj.
+✔ Adding "^Friedman\\.Rproj$" to .Rbuildignore.
+✔ Adding ".Rproj.user" to .gitignore.
+✔ Adding "^\\.Rproj\\.user$" to .Rbuildignore.
+✔ Setting active project to "<no active project>".

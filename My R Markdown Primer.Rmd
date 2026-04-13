@@ -1,0 +1,45 @@
+---
+title: "My R Markdown Primer"
+author: "Angelica Wright"
+date: "2026-04-13"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Introduction 
+R Markdown lets users bring together the text, R code, and a document that can be duplicated into a document. To use R Markdown you you can write text and then Rstudio will use the knits function to link it all together into a HTML, PDF, or word doc
+
+#Markdown  
+This is the narrative paragraph that provides more context down which can help with the formattin and structure of my document. 
+
+#LaTEX Math
+Inline math: $\alpha + \beta = \gamma$
+
+Displayed equation:
+Displayed equation:
+
+\[
+a + b = c
+\]
+
+#Code Chunks
+
+```{r}
+cigs <- read.csv("CigarettesB.csv")
+summary(cigs)
+```
+
+```{r}
+library(ggplot2)
+
+ggplot(cigs, aes(price, packs)) +
+  geom_point() +
+  geom_smooth(method = "lm", se = FALSE)
+```
+`
+#Reflection 
+Using R Markdown was efficient in being able to communicate the necessary steps and made a lot more sense in trying to take notes while adding in real world application to the programming. 
+
